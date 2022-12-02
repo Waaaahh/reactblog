@@ -4,12 +4,14 @@ const { randomBytes } = require('crypto')
 const bodyParser = require('body-parser')
 const app = express()
 const cors = require('cors')
+
 app.use(bodyParser.json());
 app.use(cors())
 
 const posts = {}
 
 app.get('/posts', (req, res) => {
+    console.log(posts)
     res.send(posts)
 })
 
