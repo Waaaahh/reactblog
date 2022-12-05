@@ -41,7 +41,7 @@ app.post('/events', (req, res) => {
 
     res.send({})
 })
-
-app.listen(4001, () => {
-
+const port = 4001
+app.listen(port, () => {
+    console.log(`Listening on port ${port}`)
 })
