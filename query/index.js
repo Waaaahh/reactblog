@@ -9,7 +9,7 @@ app.use(bodyParser.json())
 app.use(cors())
 
 app.get('/posts', (req, res) => {
-
+    res.send(posts)
 })
 
 app.post('/events', (req, res) => {
@@ -22,6 +22,7 @@ app.post('/events', (req, res) => {
     }
 
     if( type === 'CommentCreated') {
+        console.log(data)
         const { id, content, postId } = data
         
         const post = posts[postId]

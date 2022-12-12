@@ -14,7 +14,6 @@ const posts = {}
 
 
 app.get('/posts', (req, res) => {
-    console.log(posts)
     res.send(posts)
 })
 
@@ -24,7 +23,7 @@ app.post('/posts', async (req, res) => {
 
 
     posts[id] = {
-        id, title
+        id, title, comments: []
     }
 
     await axios.post('http://localhost:4005/events', {
@@ -39,7 +38,7 @@ app.post('/posts', async (req, res) => {
 
 app.post('/events', (req, res) => {
     console.log('Received Event', req.body.type)
-
+    console.log(req.body)
     res.send({})
 })
 
